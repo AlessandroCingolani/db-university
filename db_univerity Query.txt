@@ -1,0 +1,135 @@
+QUERY con SELECT
+
+
+
+ESERCIZIO N 1
+
+SELECT
+    *
+FROM
+    `students`
+WHERE
+    YEAR(`date_of_birth`) = 1990;
+
+
+ESERCIZIO N 2
+
+SELECT
+    *
+FROM
+    `courses`
+WHERE
+    `cfu` > 10;
+
+
+ESERCIZIO N 3
+
+SELECT
+    *
+FROM
+    `students`
+WHERE
+    YEAR(`date_of_birth`) < 1993;
+
+
+ESERCIZIO N 4
+
+SELECT
+    *
+FROM
+    `courses`
+WHERE
+    `period` = 'I semestre'
+AND `year` = 1;    
+
+
+ESERCIZIO N 5 
+
+SELECT
+    *
+FROM
+    `exams`
+WHERE
+    `date` = '2020-06-20'
+AND 
+	HOUR(`hour`) > 13;
+
+
+ESERCIZIO N 6
+
+SELECT
+    *
+FROM
+    `degrees`
+WHERE
+    `name` LIKE '%magistrale%';
+
+
+ESERCIZIO N 7
+
+SELECT
+    COUNT(*) AS 'totale_departements'
+FROM
+    `departments`;
+
+ESERCIZIO N 8
+
+SELECT
+    COUNT(*) AS 'teachers_no_phone'
+FROM
+    `teachers`
+WHERE
+    `phone` IS NULL;
+
+
+QUERY con GROUP BY
+
+
+ESERCIZIO N 1 
+
+
+SELECT
+    COUNT(*) AS 'numero_iscritti',  YEAR(`enrolment_date`) AS 'anno_iscrizione'
+FROM
+    `students`
+GROUP BY `anno_iscrizione`;
+
+
+ESERCIZIO N 2
+
+SELECT
+    COUNT(*) AS 'tot_teachers_same_office',`office_address` AS 'ufficio'
+FROM
+    `teachers`
+GROUP BY
+    `ufficio`;
+
+
+ESERCIZIO N 3
+
+
+SELECT
+    AVG(`vote`) AS 'media_voti', `exam_id` AS 'appello_esame'
+FROM
+    `exam_student`
+GROUP BY
+    `appello_esame`;
+
+
+ESERCIZIO N 4
+
+
+SELECT
+    COUNT(*) AS 'numero_degrees',`department_id` AS 'dipartimento'
+FROM
+    `degrees`
+
+GROUP BY
+    `dipartimento`;
+
+
+
+
+    
+
+
