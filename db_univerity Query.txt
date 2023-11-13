@@ -22,14 +22,14 @@ WHERE
     `cfu` > 10;
 
 
-ESERCIZIO N 3
+ESERCIZIO N 3 (metodo mysql calcola differenza tra date)
 
 SELECT
     *
 FROM
     `students`
 WHERE
-    YEAR(`date_of_birth`) < YEAR(CURRENT_DATE) - 30;
+    TIMESTAMPDIFF(YEAR,`date_of_birth`,CURRENT_DATE) > 30;
 
 
 ESERCIZIO N 4
